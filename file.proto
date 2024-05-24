@@ -1,0 +1,16 @@
+syntax="proto3";
+package file;
+
+option go_package="file/";
+
+message RequestBody{
+    int32 x=1;
+}
+
+message ResponseBody{
+    int32 x=1;
+}
+
+service myStreamingService{
+    rpc SendData(stream RequestBody) returns (ResponseBody) {}
+}
